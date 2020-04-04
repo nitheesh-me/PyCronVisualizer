@@ -43,7 +43,7 @@ packages = [
 "Bug Tracker" = "https://github.com/ishanjoshi02/PyCronVisualizer/issues"
 
 [tool.poetry.scripts]
-test = "pytest tests"
+test = "pytest tests/"
 
 [tool.poetry.dependencies]
 python = "^3.5"

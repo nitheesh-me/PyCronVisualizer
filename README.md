@@ -21,12 +21,20 @@ $ poetry --version
 Poetry version 1.0.0
 
 $ poetry self update
+You are using the latest version
 
 $ poetry update
+
 ```
 
 ### Build the package
 
 ```console
-poetry build
+$ poetry build
+Building pycronvis (<version>)
+ - Building sdist
+ - Built pycronvis-<version>.tar.gz
+
+ - Building wheel
+ - Built pycronvis-<version>-py3-none-any.whl
 ```
