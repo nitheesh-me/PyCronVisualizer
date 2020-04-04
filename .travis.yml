@@ -18,6 +18,7 @@ jobs:
         - source venv/bin/activate
         - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
         - source $HOME/.poetry/env
+        - poetry run pip install pip==18.1
     - name: "Python 3.7.4 on macOS"
       os: osx
       osx_image: xcode11.2 # Python 3.7.4 running on macOS 10.14.4
@@ -32,10 +33,10 @@ jobs:
       language: shell # 'language: python' is an error on Travis CI Windows
       before_install:
         - choco install python --version 3.8.0
-        - python -m pip install --upgrade pip venv
-        - pip install --user poetry
-        - python3 -m venv venv
+        - python -m pip install --upgrade pip
+        - python -m venv venv
         - ./venv/bin/activate.bat
+        - python -m pip install --user poetry
       env: PATH=/c/Python38:/c/Python38/Scripts:C:\Users\travis\AppData\Roaming\Python\Python38\Scripts:$PATH
 
 # command to install dependencies
@@ -46,4 +47,4 @@ sudo: false
 
 # command to run tests
 script:
-  - python3 -m pytest
+  - poetry run pytest tests
