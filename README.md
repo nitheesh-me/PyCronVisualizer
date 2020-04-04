@@ -24,3 +24,9 @@ $ poetry self update
 
 $ poetry update
 ```
+
+### Build the package
+
+```console
+poetry build
+```
