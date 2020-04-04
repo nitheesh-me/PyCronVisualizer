@@ -14,25 +14,25 @@ jobs:
         - "pypy3.6-7.0.0"
         - "pypy3.6-7.1.1"
       before_install:
-        - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-        - source $HOME/.poetry/env
         - python3 -m venv venv
         - source venv/bin/activate
+        - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+        - source $HOME/.poetry/env
     - name: "Python 3.7.4 on macOS"
       os: osx
       osx_image: xcode11.2 # Python 3.7.4 running on macOS 10.14.4
       language: shell # 'language: python' is an error on Travis CI macOS
       before_install:
-        - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-        - source $HOME/.poetry/env
         - python3 -m venv venv
         - source venv/bin/activate
+        - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+        - source $HOME/.poetry/env
     - name: "Python 3.8.0 on Windows"
       os: windows # Windows 10.0.17134 N/A Build 17134
       language: shell # 'language: python' is an error on Travis CI Windows
       before_install:
         - choco install python --version 3.8.0
-        - python -m pip install --upgrade pip
+        - python -m pip install --upgrade pip venv
         - pip install --user poetry
         - python3 -m venv venv
         - ./venv/bin/activate.bat
