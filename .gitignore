@@ -141,3 +141,9 @@ cython_debug/
 # static files generated from Django application using `collectstatic`
 media
 static
+
+# editor enviroments
+.vscode/
+
+# poetry files
+poetry.lock

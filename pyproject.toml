@@ -1,20 +1,65 @@
-    [tool.black]
-    line-length = 88
-    target-version = ['py38']
-    include = '\.pyi?$'
-    exclude = '''
-    /(
-        \.git
-      | \.hg
-      | \.mypy_cache
-      | \.tox
-      | \.venv
-      | _build
-      | buck-out
-      | build
-      | dist
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
 
-      # The following are specific to Black, you probably don't want those.
-      | blib2to3
-      | tests/data
-    )/
+  # The following are specific to Black, you probably don't want those.
+  | blib2to3
+  | tests/data
+)/
+'''
+
+
+[tool.poetry]
+name = "pycronvis"
+version = "0.0.1"
+description = "pycronvis is a Python package that will help you visualize the occurrences of your Cron Jobs"
+authors = ["Ishan Joshi <ishanjoshi0209@gmail.com>", "Nitheesh Chandra <nitheesh.yaratapalli@practo.com>"]
+maintainers = ["Ishan Joshi <ishanjoshi0209@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/ishanjoshi02/PyCronVisualizer"
+keywords = ["corn"]
+classifiers=[
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+packages = [
+    { include = "py_corn_visualizer" },
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/ishanjoshi02/PyCronVisualizer/issues"
+
+[tool.poetry.scripts]
+test = "pytest tests"
+
+[tool.poetry.dependencies]
+python = "^3.5"
+attrs = "^19.3.0"
+croniter = "^0.3.31"
+more-itertools = "^8.2.0"
+packaging = "^20.3"
+pluggy = "^0.13.1"
+py = "^1.8.1"
+pytest = "^5.4.1"
+wcwidth = "^0.1.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.4.1"
+
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
