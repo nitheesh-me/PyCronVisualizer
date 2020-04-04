@@ -18,6 +18,17 @@ jobs:
         - source $HOME/.poetry/env
         - poetry run pip install pip==18.1
     - name: "Python 3.7.4 on macOS"
+      python:
+        - "3.5"
+        - "3.6"
+        - "3.7"
+        - "3.8"
+        - "3.8-dev" # 3.8 development branch
+        - "nightly" # nightly build
+        - "pypy3.5-6.0.0"
+        - "pypy3.5-7.0.0"
+        - "pypy3.6-7.0.0"
+        - "pypy3.6-7.1.1"
       os: osx
       osx_image: xcode11.2 # Python 3.7.4 running on macOS 10.14.4
       language: shell # 'language: python' is an error on Travis CI macOS
