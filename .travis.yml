@@ -14,18 +14,14 @@ jobs:
         - "pypy3.6-7.0.0"
         - "pypy3.6-7.1.1"
       before_install:
-        - python3 -m venv venv
-        - source venv/bin/activate
         - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
         - source $HOME/.poetry/env
-        - poetry run pip install --user pip==18.1
+        - poetry run pip install pip==18.1
     - name: "Python 3.7.4 on macOS"
       os: osx
       osx_image: xcode11.2 # Python 3.7.4 running on macOS 10.14.4
       language: shell # 'language: python' is an error on Travis CI macOS
       before_install:
-        - python3 -m venv venv
-        - source venv/bin/activate
         - curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
         - source $HOME/.poetry/env
     - name: "Python 3.8.0 on Windows"
@@ -36,7 +32,7 @@ jobs:
         - python -m pip install --upgrade pip
         - python -m venv venv
         - ./venv/Scripts/activate.bat
-        - python -m pip install --user poetry
+        - python -m pip install poetry
       env: PATH=/c/Python38:/c/Python38/Scripts:C:\Users\travis\AppData\Roaming\Python\Python38\Scripts:$PATH
 
 # command to install dependencies
